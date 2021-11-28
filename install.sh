@@ -68,7 +68,7 @@ compile_smokeping() {
 	[[ -e /tmp/smokeping ]] && rm -rf /tmp/smokeping
 	mkdir -p /tmp/smokeping
 	cd /tmp/smokeping
-	wget https://github.com/oetiker/SmokePing/releases/download/2.7.3/smokeping-2.7.3.tar.gz
+	wget https://ghproxy.com/https://github.com/oetiker/SmokePing/releases/download/2.7.3/smokeping-2.7.3.tar.gz
 	tar xzvf smokeping-2.7.3.tar.gz
 	cd smokeping-2.7.3
 	./configure --prefix=/usr/local/smokeping
@@ -80,7 +80,7 @@ compile_smokeping() {
 }
 
 configure() {
-	origin="https://github.com/KukiSa/smokeping-lnmp/raw/main"
+	origin="https://ghproxy.com/https://github.com/KukiSa/smokeping-lnmp/raw/main"
 	ip=$(curl -sL https://api64.ipify.org -4) || error=1
 	[[ $error ]] && echo "获取本机 IP 地址失败" && exit 1
 	wget $origin/tcpping-sp -O /usr/bin/tcpping-sp && chmod +x /usr/bin/tcpping-sp
